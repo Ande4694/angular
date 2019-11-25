@@ -58,10 +58,24 @@ describe('trips reducer', () => {
         expect(result).toEqual(expectedOutput);
     });
 
-    // it('should be able to delete a trip, without mutating the array of trips', () =>{
+    it('should Delete a trip in the lifts', () => {
+      // Add a new trip object by calling the reducer's CREATE_TRIP.
+      // expect after that the state has a lift array one size larger and check the object as well.
+      const trip: Trip = { _id: '1', origin:"KEA", departureTime: new Date(2019, 0, 2) } as Trip;// Create a trip obj.
 
-    //     //ARRANGE
-    //     const ds = new DataService();
-    //     const expectedOutput = {isLift: false, lifts: ds.tempData.filter(x => x._id !== 1)}
-    // });
+      const inputState = { isLift: false, lifts: [trip] }; // Configuring my previous state
+      const actionObject = { type: types.LiftActions.DEL_TRIP, payload: '1' }; // Action object
+      const expectedOutput = { isLift: false, lifts: [] }; // After test I want this!
+
+      deepFreeze(inputState);
+      // Act
+      const result = tripsReducer(inputState, actionObject); // Perform test
+
+      // Assert
+      expect(result.lifts.length).toEqual(0);
+      expect(result).toEqual(expectedOutput); // If true, test passes
+    });
+
+
+
 });
