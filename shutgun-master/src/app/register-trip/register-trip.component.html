@@ -1,0 +1,31 @@
+<form [formGroup]="tripForm" class="example-form" (ngSubmit)="onTripSubmit()">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Origin" formControlName="origin">
+    <mat-error>
+      Please provide a origin
+    </mat-error>
+  </mat-form-field> 
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Destination" formControlName="destination">
+    <mat-error>
+      Please provide a destination
+    </mat-error>
+  </mat-form-field> 
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Available Seats" type="number" formControlName="availableSeats">
+    <mat-error>
+      Please provide available seats
+    </mat-error>
+  </mat-form-field> 
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="departure date/time" type="datetime-local" formControlName="departureTime">
+    <mat-error>
+      Please provide a departure
+    </mat-error>
+  </mat-form-field> 
+
+  <button mat-raised-button color="primary" id="registerTrip">Register Trip</button>
+</form>

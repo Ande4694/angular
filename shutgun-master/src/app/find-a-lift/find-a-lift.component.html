@@ -1,0 +1,12 @@
+<p>find-a-lift works!</p>
+
+<input type="text" [(ngModel)]="searchInput">
+
+<div *ngFor="let tripObject of lifts | filterLift: searchInput" class="lift-container">
+
+  <app-trip (tripDeleteEmitter)="onDeleteLift($event)" [trip]="tripObject" ></app-trip>
+
+</div>
+
+<button (click)="onTestClick()">Don't click me</button>
+{{isLift}}

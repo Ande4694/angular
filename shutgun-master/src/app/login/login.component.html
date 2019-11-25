@@ -1,0 +1,22 @@
+  <h1>Login</h1>
+
+  <form [formGroup]="loginForm" class="example-form" (ngSubmit)="onLoginClick()">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Login" formControlName="username" id="username-input">
+      
+      <mat-error *ngIf="loginForm.controls.username.hasError('required')">
+        Please provide a username
+      </mat-error>
+      
+      <mat-error *ngIf="loginForm.controls.username.hasError('minlength')">
+        Username must be at least 3 characters
+      </mat-error>
+
+    </mat-form-field> 
+
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Password" type="password" formControlName="password" id="password-input">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" id="login-button">Login</button>
+  </form>

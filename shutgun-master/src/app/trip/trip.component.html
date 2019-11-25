@@ -1,0 +1,17 @@
+<mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{trip.origin | uppercase}} - {{trip.destination | lowercase}} </mat-card-title>
+      <mat-card-subtitle>{{trip.departureTime | date: 'dd/MM/yyyy hh:mm' }}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <p>
+        {{trip.owner.firstName}} {{trip.owner.lastName}} have {{trip.availableSeats}} available seats
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button (click)="onDeleteLift(trip._id)" class="delete-button">Delete</button>
+    </mat-card-actions>
+  </mat-card>
