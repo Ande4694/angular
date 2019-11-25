@@ -77,5 +77,22 @@ describe('trips reducer', () => {
     });
 
 
+    it('should delete a trip', () => {
+      //Arrange
+      //const trip: Trip = { _id: '1', origin:"KEA", departureTime: new Date(2019, 0, 2)} as Trip;
+      const ds = new DataService();
+      const id = '2';
+      const inputState = {isLift: false, lifts: ds.tempData};
+      const actionObject = {type: types.LiftActions.DEL_TRIP, payload: id}
+      const expectedOutput = ds.tempData.length-1;
+
+      //ACT
+      const result = tripsReducer(inputState, actionObject);
+
+      //ASSERT
+      deepFreeze(inputState);
+      expect(result.lifts.length).toEqual(expectedOutput);
+  });
+
 
 });
