@@ -2,8 +2,20 @@
   "users" : [
   { 
     "id" : 1,
-    "email" : "admin@mail.dk"
-  }
+    "email" : "admin@mail.dk",
+    "firstName" : "Kurt",
+    "lastName" : "wagner",
+    "role" : "admin",
+    "password" : "passsword"
+  },
+    {
+    "id" : 2,
+    "email" : "user@mail.dk",
+    "firstName" : "Birger",
+    "lastName" : "Mortensen",
+    "role" : "user",
+    "password" : "passsword"
+    }
   ]
 
 }
